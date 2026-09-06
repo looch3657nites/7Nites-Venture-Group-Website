@@ -15,6 +15,7 @@ import {
   Music2,
   Newspaper,
   Palette,
+  Phone,
   Plus,
   Route,
   Rocket,
@@ -35,31 +36,31 @@ const queryClient = new QueryClient();
 
 const ventures = [
   {
-    name: 'ROUTEFLOW',
-    kind: 'Mobility Technology / SaaS',
-    description: 'Digital infrastructure and operational technology modernising the minibus taxi ecosystem.',
+    name: 'NEW VENTURE 01',
+    kind: 'Technology / SaaS',
+    description: 'A technology venture in development, focused on practical products for a changing world.',
     mark: Route,
     tone: 'orange',
-    status: 'BUILDING',
-    note: 'Digital infrastructure and operational technology for the minibus taxi ecosystem.',
+    status: 'COMING SOON',
+    note: 'Details will be announced when the venture is ready.',
   },
   {
-    name: 'LOCALPLUG',
-    kind: 'Media / Digital Marketing',
-    description: 'A local discovery and content ecosystem connecting businesses, communities and audiences.',
+    name: 'NEW VENTURE 02',
+    kind: 'Media / Digital',
+    description: 'A media and digital venture exploring better ways to connect people, brands and communities.',
     mark: CircleDot,
     tone: 'lime',
-    status: 'BUILDING',
-    note: 'A local discovery and content ecosystem for businesses, communities and audiences.',
+    status: 'IN DEVELOPMENT',
+    note: 'Details will be announced when the venture is ready.',
   },
   {
-    name: '7NITES MUSIC',
+    name: 'NEW VENTURE 03',
     kind: 'Music / Entertainment',
-    description: 'Artist development, music experiences, entertainment partnerships and creative projects.',
+    description: 'A creative venture exploring new experiences across music, entertainment and culture.',
     mark: Music2,
     tone: 'blue',
-    status: 'ACTIVE',
-    note: 'Artist development, music experiences, entertainment partnerships and creative projects.',
+    status: 'NEW VENTURE',
+    note: 'Details will be announced when the venture is ready.',
   },
 ];
 
@@ -69,7 +70,7 @@ const industries = [
     kicker: '01 / CULTURE IN MOTION',
     title: 'Ideas people can feel.',
     description: 'We create experiences, partnerships and entertainment properties that turn attention into belonging.',
-    tags: ['7NITES MUSIC', 'Experiences'],
+    tags: ['Music', 'Experiences'],
     icon: Clapperboard,
   },
   {
@@ -77,7 +78,7 @@ const industries = [
     kicker: '02 / STORIES THAT CONNECT',
     title: 'Make attention meaningful.',
     description: 'We connect businesses, communities and audiences through discovery, content and digital marketing.',
-    tags: ['LOCALPLUG', 'Content'],
+    tags: ['Discovery', 'Content'],
     icon: Newspaper,
   },
   {
@@ -85,7 +86,7 @@ const industries = [
     kicker: '03 / THE CONNECTIVE TISSUE',
     title: 'Useful beats shiny.',
     description: 'We turn real-world problems into products, platforms and systems that are clear, human and ready to scale.',
-    tags: ['ROUTEFLOW', 'SaaS'],
+    tags: ['Platforms', 'SaaS'],
     icon: Cpu,
   },
   {
@@ -368,7 +369,7 @@ function AboutSection() {
             </div>
           </div>
           <div className="mt-10 grid grid-cols-2 gap-x-5 gap-y-7 border-t border-[#192b5b]/20 pt-7 sm:grid-cols-4">
-            {['[X]+ Projects', '[X] Ventures', '[X] Industries', '[X] Markets'].map((stat) => <div key={stat}><p className="font-display text-3xl font-bold tracking-[-.07em] text-[#192b5b]">{stat.split(' ')[0]}</p><p className="mt-2 font-mono-custom text-[9px] uppercase tracking-[.15em] text-[#192b5b]/55">{stat.split(' ').slice(1).join(' ')}</p></div>)}
+            {['[X]+ Ideas', '[X] Industries', '[X] Markets', '[X] Partnerships'].map((stat) => <div key={stat}><p className="font-display text-3xl font-bold tracking-[-.07em] text-[#192b5b]">{stat.split(' ')[0]}</p><p className="mt-2 font-mono-custom text-[9px] uppercase tracking-[.15em] text-[#192b5b]/55">{stat.split(' ').slice(1).join(' ')}</p></div>)}
           </div>
           <div className="mt-10 grid gap-6 border-t border-[#192b5b]/20 pt-7 sm:grid-cols-2">
             <div><p className="font-mono-custom text-[10px] uppercase tracking-[.15em] text-[#ff663f]">Our belief</p><p className="mt-3 text-sm leading-6 text-[#192b5b]/70">The best companies feel inevitable in hindsight — and impossible to ignore in the moment.</p></div>
@@ -444,7 +445,7 @@ function ContactSection() {
   return (
     <section id="build-with-us" className="bg-[#c8f169] px-5 py-24 sm:px-8 lg:px-12 lg:py-36">
       <div className="mx-auto grid max-w-[1440px] gap-16 lg:grid-cols-[.75fr_1.25fr] lg:gap-28">
-          <div id="contact"><p className="font-mono-custom text-[10px] uppercase tracking-[.2em] text-[#ff663f]">08 / Contact</p><h2 className="mt-5 font-display text-[clamp(3.4rem,7vw,7.5rem)] font-bold leading-[.8] tracking-[-.1em] text-[#192b5b]">HAVE AN IDEA?<br /><span className="text-[#ff663f]">LET'S BUILD IT.</span></h2><p className="mt-8 max-w-sm text-sm leading-7 text-[#192b5b]/70">Tell us what you are building, what you are seeing or where you think we should look next.</p><div className="mt-10 flex items-center gap-3 text-sm font-bold text-[#192b5b]"><Mail className="h-4 w-4 text-[#ff663f]" /> hello@7nites.co.za</div></div>
+        <div id="contact"><p className="font-mono-custom text-[10px] uppercase tracking-[.2em] text-[#ff663f]">08 / Contact</p><h2 className="mt-5 font-display text-[clamp(3.4rem,7vw,7.5rem)] font-bold leading-[.8] tracking-[-.1em] text-[#192b5b]">HAVE AN IDEA?<br /><span className="text-[#ff663f]">LET'S BUILD IT.</span></h2><p className="mt-8 max-w-sm text-sm leading-7 text-[#192b5b]/70">Tell us what you are building, what you are seeing or where you think we should look next.</p><div className="mt-10 grid gap-4 text-sm font-bold text-[#192b5b]"><a href="mailto:hello@7nitesentertainment.co.za" className="flex items-center gap-3 hover:text-[#ff663f]"><Mail className="h-4 w-4 text-[#ff663f]" /> hello@7nitesentertainment.co.za</a><a href="tel:0812096560" className="flex items-center gap-3 hover:text-[#ff663f]"><Phone className="h-4 w-4 text-[#ff663f]" /> 0812096560</a></div></div>
         <div className="rounded-[1.5rem] bg-[#192b5b] p-6 text-[#f6f0e6] sm:p-9">
           {submitted ? <div className="flex min-h-[450px] flex-col items-start justify-center"><span className="grid h-14 w-14 place-items-center rounded-full bg-[#c8f169] text-[#192b5b]"><Check className="h-6 w-6" /></span><h3 className="mt-7 font-display text-4xl font-bold leading-none tracking-[-.07em]">Message received.</h3><p className="mt-4 max-w-sm text-sm leading-6 text-[#f6f0e6]/65">Thanks for reaching out. The right person at 7Nites will be in touch.</p><button type="button" onClick={() => setSubmitted(false)} className="mt-8 text-[10px] font-bold uppercase tracking-[.15em] text-[#c8f169] underline underline-offset-4" data-testid="button-send-another">Send another message</button></div> : <form onSubmit={handleSubmit} className="space-y-7" aria-label="Contact 7Nites"><div className="grid gap-7 sm:grid-cols-2"><div><label htmlFor="name" className="font-mono-custom text-[9px] uppercase tracking-[.16em] text-[#f6f0e6]/50">Name</label><input id="name" name="name" required type="text" placeholder="Your name" className="mt-2 w-full border-b border-[#f6f0e6]/25 bg-transparent px-0 py-3 text-base text-[#f6f0e6] outline-none placeholder:text-[#f6f0e6]/30 focus:border-[#c8f169]" data-testid="input-name" /></div><div><label htmlFor="company" className="font-mono-custom text-[9px] uppercase tracking-[.16em] text-[#f6f0e6]/50">Company</label><input id="company" name="company" required type="text" placeholder="Your company" className="mt-2 w-full border-b border-[#f6f0e6]/25 bg-transparent px-0 py-3 text-base text-[#f6f0e6] outline-none placeholder:text-[#f6f0e6]/30 focus:border-[#c8f169]" data-testid="input-company" /></div></div><div className="grid gap-7 sm:grid-cols-2"><div><label htmlFor="email" className="font-mono-custom text-[9px] uppercase tracking-[.16em] text-[#f6f0e6]/50">Email</label><input id="email" name="email" required type="email" placeholder="you@company.com" className="mt-2 w-full border-b border-[#f6f0e6]/25 bg-transparent px-0 py-3 text-base text-[#f6f0e6] outline-none placeholder:text-[#f6f0e6]/30 focus:border-[#c8f169]" data-testid="input-email" /></div><div><label htmlFor="phone" className="font-mono-custom text-[9px] uppercase tracking-[.16em] text-[#f6f0e6]/50">Phone</label><input id="phone" name="phone" required type="tel" placeholder="+27 ..." className="mt-2 w-full border-b border-[#f6f0e6]/25 bg-transparent px-0 py-3 text-base text-[#f6f0e6] outline-none placeholder:text-[#f6f0e6]/30 focus:border-[#c8f169]" data-testid="input-phone" /></div></div><div><label htmlFor="partnership-type" className="font-mono-custom text-[9px] uppercase tracking-[.16em] text-[#f6f0e6]/50">Partnership type</label><select id="partnership-type" name="partnershipType" required value={selected} onChange={(event) => setSelected(event.target.value)} className="mt-2 w-full border-b border-[#f6f0e6]/25 bg-[#192b5b] px-0 py-3 text-base text-[#f6f0e6] outline-none focus:border-[#c8f169]" data-testid="select-partnership-type"><option value="" disabled>Select an option</option>{options.map((option) => <option key={option} value={option}>{option}</option>)}</select></div><div><label htmlFor="message" className="font-mono-custom text-[9px] uppercase tracking-[.16em] text-[#f6f0e6]/50">Message</label><textarea id="message" name="message" required rows={4} placeholder="Tell us what you are building..." className="mt-2 w-full resize-none border-b border-[#f6f0e6]/25 bg-transparent px-0 py-3 text-base text-[#f6f0e6] outline-none placeholder:text-[#f6f0e6]/30 focus:border-[#c8f169]" data-testid="input-message" /></div><button type="submit" disabled={!selected} className="group inline-flex items-center gap-3 rounded-full bg-[#ff663f] px-5 py-3 text-[11px] font-extrabold uppercase tracking-[.14em] text-[#192b5b] transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-40" data-testid="button-submit-contact">Send enquiry <Send className="h-4 w-4 transition-transform group-hover:translate-x-1" /></button></form>}
         </div>
