@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "7Nites Entertainment Website"
+description = "A premium public website for 7Nites Entertainment, an African venture and innovation group building businesses across entertainment, media, technology, telecom, fintech and digital platforms."
+version = "1.0.0"
+id = "artifacts/7nites-website"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18212
+
+[services.development]
+run = "pnpm --filter @workspace/7nites-website run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/7nites-website", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/7nites-website/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18212"
+BASE_PATH = "/"
