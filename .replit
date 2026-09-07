@@ -18,3 +18,9 @@ expertMode = true
 [postMerge]
 path = "scripts/post-merge.sh"
 timeoutMs = 20000
+
+[userenv]
+
+[userenv.shared]
+EMAIL_FROM = "7Nites Entertainment <hello@7nitesentertainment.co.za>"
+ENQUIRY_TO_EMAIL = "hello@7nitesentertainment.co.za"
