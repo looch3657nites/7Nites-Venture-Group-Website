@@ -50,22 +50,60 @@ function sendJson(response: VercelResponse, status: number, body: unknown) {
   response.status(status).json(body);
 }
 
+function normalizeOrigin(value: unknown) {
+  const candidate = Array.isArray(value) ? value[0] : value;
+
+  if (typeof candidate !== 'string') {
+    return null;
+  }
+
+  let trimmed = candidate.trim();
+  if (
+    (trimmed.startsWith('"') && trimmed.endsWith('"')) ||
+    (trimmed.startsWith("'") && trimmed.endsWith("'"))
+  ) {
+    trimmed = trimmed.slice(1, -1).trim();
+  }
+
+  if (!trimmed) {
+    return null;
+  }
+
+  try {
+    const url = new URL(trimmed);
+    if (
+      !['http:', 'https:'].includes(url.protocol) ||
+      url.username ||
+      url.password ||
+      url.pathname !== '/' ||
+      url.search ||
+      url.hash
+    ) {
+      return null;
+    }
+
+    return url.origin.toLowerCase();
+  } catch {
+    return null;
+  }
+}
+
 function getAllowedOrigins() {
   return (process.env.ALLOWED_ORIGINS ?? '')
     .split(',')
-    .map((origin) => origin.trim())
-    .filter(Boolean);
+    .map(normalizeOrigin)
+    .filter((origin): origin is string => origin !== null);
 }
 
 function applyOriginGuard(request: VercelRequest, response: VercelResponse) {
-  const origin = request.headers.origin;
+  const origin = normalizeOrigin(request.headers.origin);
   const allowedOrigins = getAllowedOrigins();
 
-  if (!origin || allowedOrigins.length === 0) {
+  if (allowedOrigins.length === 0) {
     return true;
   }
 
-  if (!allowedOrigins.includes(origin)) {
+  if (!origin || !allowedOrigins.includes(origin)) {
     sendJson(response, 403, { error: 'Request origin is not allowed.' });
     return false;
   }
